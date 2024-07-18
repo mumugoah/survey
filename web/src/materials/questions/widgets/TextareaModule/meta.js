@@ -1,7 +1,7 @@
 import basicConfig from '@materials/questions/common/config/basicConfig'
 
 const meta = {
-  title: '多行输入框',
+  title: '输入题',
   type: 'textarea',
   componentName: 'TextareaModule',
   attrs: [

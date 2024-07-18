@@ -1,7 +1,7 @@
 import basicConfig from '@materials/questions/common/config/basicConfig'
 
 const meta = {
-  title: '单选',
+  title: '题',
   type: 'radio',
   componentName: 'RadioModule',
   attrs: [

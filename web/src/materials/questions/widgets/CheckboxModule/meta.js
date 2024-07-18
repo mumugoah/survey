@@ -1,7 +1,7 @@
 import basicConfig from '@materials/questions/common/config/basicConfig'
 
 const meta = {
-  title: '多选',
+  title: '多选题',
   type: 'checkbox',
   componentName: 'CheckBoxModule',
   attrs: [

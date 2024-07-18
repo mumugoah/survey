@@ -1,23 +1,12 @@
 <template>
   <div class="nav">
-    <div class="left-group">
-      <BackPanel></BackPanel>
-      <TitlePanel :style="{ marginLeft: '30px' }" :title="title"></TitlePanel>
-    </div>
+    <!-- <div class="left-group">
+      <TitlePanel :title="title"></TitlePanel>
+    </div> -->
     <div class="center-group">
       <NavPanel></NavPanel>
     </div>
     <div class="right-group">
-      <CooperationPanel>
-        <template #content="{ onCooper }">
-          <div class="btn" @click="onCooper">
-            <i-ep-connection class="view-icon" :size="20" />
-            <span class="btn-txt">协作</span>
-          </div>
-        </template>
-      </CooperationPanel>
-      <PreviewPanel></PreviewPanel>
-      <HistoryPanel></HistoryPanel>
       <SavePanel></SavePanel>
       <PublishPanel></PublishPanel>
     </div>

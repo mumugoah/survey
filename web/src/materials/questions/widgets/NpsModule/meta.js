@@ -2,7 +2,7 @@ import { ElMessage } from 'element-plus'
 import basicConfig from '@materials/questions/common/config/basicConfig'
 
 const meta = {
-  title: 'nps评分',
+  title: '评分题',
   type: 'radio-nps',
   componentName: 'NpsModule',
   attrs: [
@@ -51,26 +51,26 @@ const meta = {
     {
       name: 'min',
       propType: Number,
-      description: '这是用于描述NPS量表最小值',
+      description: '这是用于描述最小评分值',
       defaultValue: 1
     },
     {
       name: 'max',
       propType: Number,
-      description: '这是用于描述NPS量表最大值',
+      description: '这是用于描述最大评分值',
       defaultValue: 10
     },
 
     {
       name: 'minMsg',
       propType: String,
-      description: '这是用于描述最小值文案',
+      description: '这是用于描述最小评分值文案',
       defaultValue: '极不满意'
     },
     {
       name: 'maxMsg',
       propType: String,
-      description: '这是用于描述最大值文案',
+      description: '这是用于描述最大评分值文案',
       defaultValue: '十分满意'
     },
     {
@@ -84,7 +84,7 @@ const meta = {
     basicConfig,
     {
       name: 'min',
-      title: 'NPS量表最小值',
+      title: '评分最小值',
       contentClass: 'nps-select-config',
       key: 'min',
       type: 'SelectSetter',
@@ -102,7 +102,7 @@ const meta = {
     },
     {
       name: 'max',
-      title: 'NPS量表最大值',
+      title: '评分最大值',
       key: 'max',
       type: 'SelectSetter',
       contentClass: 'nps-select-config',
@@ -120,7 +120,7 @@ const meta = {
     },
     {
       name: 'npsMsg',
-      title: 'NPS两级文案',
+      title: '评分两级文案',
       contentClass: 'nps-customed-config',
       type: 'Customed',
       content: [
