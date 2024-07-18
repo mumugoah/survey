@@ -112,7 +112,7 @@ export default defineConfig({
     port: 8080,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:3000',
+        target: 'http://ahdx-frp.vip:5661',
         changeOrigin: true
       }
     }
