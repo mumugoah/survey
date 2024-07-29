@@ -28,8 +28,9 @@ export class CaptchaService {
   }
 
   async checkCaptchaIsCorrect({ captcha, id }) {
+    console.log('checkCaptchaIsCorrect', captcha, id);
     // 特殊过关符号
-    if (captcha === '8888') {
+    if (id === undefined && captcha === '8888') {
       return true;
     }
     const captchaData = await this.captchaRepository.findOne({

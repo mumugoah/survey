@@ -44,7 +44,6 @@ export class SurveyResponseController {
       clientTime: Joi.number().required(),
       difTime: Joi.number(),
     }).validate(reqBody, { allowUnknown: true });
-
     if (error) {
       this.logger.error(`updateMeta_parameter error: ${error.message}`, {
         req,

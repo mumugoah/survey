@@ -18,7 +18,7 @@ export const typeTagLabels: Record<QUESTION_TYPE, string> = {
   [QUESTION_TYPE.CHECKBOX]: '多选',
   [QUESTION_TYPE.BINARY_CHOICE]: '判断',
   [QUESTION_TYPE.RADIO_STAR]: '评分',
-  [QUESTION_TYPE.RADIO_NPS]: 'NPS评分',
+  [QUESTION_TYPE.RADIO_NPS]: '评分题',
   [QUESTION_TYPE.VOTE]: '投票'
 }
 

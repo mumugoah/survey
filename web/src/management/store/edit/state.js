@@ -28,7 +28,7 @@ export default {
         color: '#fff'
       },
       themeConf: {
-        color: '#ffa600'
+        color: '#1677ff'
       },
       contentConf: {
         opacity: 100

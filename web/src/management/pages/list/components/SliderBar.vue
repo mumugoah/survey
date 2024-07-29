@@ -126,6 +126,6 @@ const handleSelect = (id: string) => {
 .iconfont {
   font-size: 16px;
   margin-right: 10px;
-  color: #faa600 !important;
+  color: #1677ff !important;
 }
 </style>

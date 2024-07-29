@@ -1,6 +1,5 @@
 <template>
   <div class="publish-result-page">
-    <LeftMenu class="left" />
     <div class="right">
       <template v-if="curStatus !== 'new'">
         <div class="preview-container" :style="{ backgroundImage: `url('${backgroundImage}')` }">
@@ -60,6 +59,8 @@ const mainChannel = computed(() => {
 const route = useRoute()
 const router = useRouter()
 onMounted(async () => {
+  window.parent.postMessage('loaded', '*')
+
   store.commit('edit/setSurveyId', route.params.id)
 
   try {
@@ -94,7 +95,6 @@ onMounted(async () => {
     align-items: center;
     justify-content: center;
 
-    background: #f6f7f9;
     padding: 30px 40px 50px 40px;
   }
 
@@ -125,7 +125,7 @@ onMounted(async () => {
 
   .launch-tip {
     font-size: 12px;
-    color: #fa881a;
+    color: #1677ff;
   }
 
   h2 {

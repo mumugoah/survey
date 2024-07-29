@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Body, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
 import { MessagePushingTask } from 'src/models/messagePushingTask.entity';
@@ -166,6 +166,7 @@ export class MessagePushingTaskService {
         for (const task of messagePushingTasks) {
           switch (task.type) {
             case MESSAGE_PUSHING_TYPE.HTTP: {
+              console.log(sendData)
               try {
                 const res = await httpPost({
                   url: task.pushAddress,

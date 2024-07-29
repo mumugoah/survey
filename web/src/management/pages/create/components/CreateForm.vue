@@ -149,7 +149,7 @@ const submit = () => {
   }
 
   .create-btn {
-    background-color: rgb(255, 166, 0);
+    background-color: #1677ff;
     margin-right: 10px;
   }
 }

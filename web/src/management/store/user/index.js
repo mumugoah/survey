@@ -43,6 +43,7 @@ export default {
       commit('setInitialized', true)
     },
     login({ commit }, data) {
+      console.log('login', data)
       const loginTime = Date.now()
       commit('setUserInfo', data)
       commit('setHsLogined', true)

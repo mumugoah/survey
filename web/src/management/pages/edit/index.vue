@@ -1,6 +1,5 @@
 <template>
   <div class="edit-index">
-    <button @click="handleSave">点击我</button>
     <!-- <LeftMenu class="left"></LeftMenu> -->
     <div class="right">
       <CommonTemplate style="background-color: #f6f7f9">
@@ -36,6 +35,8 @@ const router = useRouter()
 const route = useRoute()
 
 onMounted(async () => {
+  window.parent.postMessage('loaded', '*')
+
   store.commit('edit/setSurveyId', route.params.id)
 
   try {
@@ -49,12 +50,13 @@ onMounted(async () => {
     }, 1000)
   }
 
-  window.addEventListener('message', (event) => {
-    console.log(event)
-    // if (event.data === 'save') {
-    //   handleSave()
-    // }
-  });
+  window.addEventListener('message', async (event) => {
+    if (event.data === 'save') {
+      await handleSave()
+      window.parent.postMessage('saveSuccess', '*')
+  }})
+
+  console.log("onMounted")
 })
 
 
@@ -79,14 +81,12 @@ const saveData = async () => {
     return null
   }
 
-  const res = await saveSurvey(saveData)
+  const res = saveSurvey(saveData)
   return res
 }
 
 
 const handleSave = async () => {
-  console.log('点击测试')
-
   try {
     updateLogicConf()
   } catch (error) {

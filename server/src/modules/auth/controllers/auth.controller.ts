@@ -7,6 +7,7 @@ import { HttpException } from 'src/exceptions/httpException';
 import { EXCEPTION_CODE } from 'src/enums/exceptionCode';
 import { create } from 'svg-captcha';
 import { ApiTags } from '@nestjs/swagger';
+import { is } from 'cheerio/lib/api/traversing';
 @ApiTags('auth')
 @Controller('/api/auth')
 export class AuthController {
@@ -55,14 +56,16 @@ export class AuthController {
       },
     );
     // 验证过的验证码要删掉，防止被别人保存重复调用
-    this.captchaService.deleteCaptcha(userInfo.captchaId);
-    return {
-      code: 200,
-      data: {
-        token,
-        username: user.username,
-      },
-    };
+    if (userInfo.captchaId !== 'api'){
+      this.captchaService.deleteCaptcha(userInfo.captchaId);
+      return {
+        code: 200,
+        data: {
+          token,
+          username: user.username,
+        },
+      };
+    }
   }
 
   @Post('/login')
@@ -80,6 +83,8 @@ export class AuthController {
       captcha: userInfo.captcha,
       id: userInfo.captchaId,
     });
+
+    console.log(isCorrect)
 
     if (!isCorrect) {
       throw new HttpException('验证码不正确', EXCEPTION_CODE.CAPTCHA_INCORRECT);
@@ -119,8 +124,11 @@ export class AuthController {
           ),
         },
       );
-      // 验证过的验证码要删掉，防止被别人保存重复调用
-      this.captchaService.deleteCaptcha(userInfo.captchaId);
+      if (userInfo.captchaId !== 'api'){
+        // 验证过的验证码要删掉，防止被别人保存重复调用
+        this.captchaService.deleteCaptcha(userInfo.captchaId);
+      }
+      
     } catch (error) {
       throw new Error(
         'generateToken erro:' +

@@ -47,6 +47,7 @@ export class MessagePushingTaskController {
     req,
     @Body() createMessagePushingTaskDto: CreateMessagePushingTaskDto,
   ) {
+    console.log('createMessagePushingTaskDto', createMessagePushingTaskDto);
     const { error, value } = CreateMessagePushingTaskDto.validate(
       createMessagePushingTaskDto,
     );

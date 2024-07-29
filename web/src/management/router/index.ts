@@ -162,10 +162,24 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   const store = useStore()
-  // 初始化用户信息
-  if (!store.state.user?.initialized) {
-    await store.dispatch('user/init')
+  //如果有token，直接登录
+  const token = to.query.token as string
+  const username = to.query.username as string
+  if (token && username) {
+    console.log('token', token)
+    console.log('username', username)
+    const userInfo = {
+      token,
+      username
+    }
+    await store.dispatch('user/login', userInfo)
+  }else{
+    // 初始化用户信息
+    if (!store.state.user?.initialized) {
+      await store.dispatch('user/init')
+    }
   }
+  
   // 更新页面标题
   if (to.meta.title) {
     document.title = to.meta.title as string

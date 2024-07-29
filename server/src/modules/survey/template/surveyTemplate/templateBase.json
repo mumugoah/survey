@@ -25,7 +25,7 @@
     }
   },
   "bottomConf": {
-    "logoImage": "/imgs/Logo.webp",
+    "logoImage": "",
     "logoImageWidth": "60%"
   },
   "baseConf": {
@@ -43,7 +43,7 @@
       "color": "#ffffff"
     },
     "themeConf": {
-      "color": "#ffa600"
+      "color": "#1677ff"
     },
     "contentConf": {
       "opacity": 100

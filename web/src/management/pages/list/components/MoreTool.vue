@@ -64,7 +64,7 @@ const call = (t) => {
       &:hover {
         background: #fef6e6 100%;
         span.more_con {
-          color: #faa600;
+          color: '#1677ff';
         }
       }
       text-align: center;

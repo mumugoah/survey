@@ -245,7 +245,7 @@ const handleLogout = () => {
 
     span {
       cursor: pointer;
-      color: #faa600;
+      color: #1677ff;
     }
   }
   .content-wrap {

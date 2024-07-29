@@ -170,7 +170,7 @@ const handleDelete = (id: any) => {
     height: 20px;
     background: #fef6e6;
     border-radius: 2px;
-    color: #faa600;
+    color: #1677ff;
     font-size: 12px;
     display: flex;
     justify-content: center;
